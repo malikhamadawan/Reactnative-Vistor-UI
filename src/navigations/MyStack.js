@@ -1,20 +1,20 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { MyImg } from '../screen/imagePicker/MyImg';
+import MyDrawer from '../navigations/MyDrawer'; 
 const Stack = createNativeStackNavigator();
 
-const MyScreens = () => {
+const MyStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="MyImg"
-          component={MyImg}
+          name="MyDrawer"
+          component={MyDrawer}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-export default MyScreens;
+export default MyStack;

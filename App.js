@@ -1,6 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import ScreenNavigator from './src/navigations/MyScreens';
+import MyStack from './src/navigations/MyStack';
 const App = () => {
-  return <ScreenNavigator />;
+  return <MyStack />;
 };
 export default App;
