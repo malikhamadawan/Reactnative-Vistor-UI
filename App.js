@@ -1,4 +1,3 @@
-import 'react-native-gesture-handler';
 import React from 'react';
 import MyStack from './src/navigations/MyStack';
 const App = () => {

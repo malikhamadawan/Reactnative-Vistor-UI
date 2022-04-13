@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import MyDrawer from '../navigations/MyDrawer'; 
+import MyTabs from './MyTabs';
+import MyDrawer from './MyDrawer';
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -9,8 +10,8 @@ const MyStack = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="MyDrawer"
-          component={MyDrawer}
+          name="MyTab"
+          component={MyTabs}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
