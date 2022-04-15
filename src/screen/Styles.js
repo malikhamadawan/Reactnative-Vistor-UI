@@ -4,7 +4,7 @@ const { height, width } = Dimensions.get('window');
 const Styles = StyleSheet.create({
         mainContainer: {
                 flex: 1,
-                backgroundColor: 'white',
+                // backgroundColor: 'white',
                 alignItems: 'center',
         },
         container: {
@@ -52,6 +52,10 @@ const Styles = StyleSheet.create({
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: 15,
+        },
+        map :{
+                height: 200,
+                width: 100,
         },
 
 });

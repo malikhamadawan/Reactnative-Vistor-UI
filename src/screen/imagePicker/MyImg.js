@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
 import {
   View,
@@ -9,11 +8,19 @@ import {
   Text,
   Image,
   Pressable,
+  Platform,
 } from 'react-native';
+import MapView,{ PROVIDER_GOOGLE } from 'react-native-maps';
 import ImagePicker from 'react-native-image-crop-picker';
 import Styles from '../Styles';
 const { height, width } = Dimensions.get('window');
 export const MyImg = () => {
+  const [region, setRegion] = useState({
+    latitude: 51.5079145,
+    longitude: -0.0899163,
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01,
+  });
   const [text, setText] = useState(require('../../assets/image.png'));
   const [image, setImage] = useState('');
   console.log(image);
@@ -60,6 +67,34 @@ export const MyImg = () => {
             }}
           />
         </Pressable>
+
+      </View>
+      <View style={{
+        height: (height / 100) * 40,
+        width: (width / 100) * 100,
+      }}>
+        {/* <MapView
+      provider={PROVIDER_GOOGLE}
+          style={{
+            height: 200, width: 400,
+            //alignItems: 'center',
+          }}
+          showsUserLocation
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+            // userInterfaceStyle: 'dark',
+            // showsMyLocationButton: true,
+            // scrollEnabled: true,
+            // moveOnMarkerPress: true,
+            // onMapReady: true,
+          }}
+          onRegionChangeComplete={(region) => setRegion(region)}
+        /> */}
+        <Text style={{fontSize: 16, color: 'black',}}>Current latitude: {region.latitude}</Text>
+        <Text style={{fontSize:16, color: 'black'}}>Current longitude: {region.longitude}</Text>
       </View>
     </View>
   );

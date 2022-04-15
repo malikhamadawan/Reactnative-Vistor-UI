@@ -1,15 +1,33 @@
 import React from "react";
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions,TouchableOpacity } from 'react-native';
+import Icons from 'react-native-vector-icons/Ionicons';
 import Styles from "./Styles";
-export const Dummy2 = () => {
+const { height, width } = Dimensions.get('window');
+export const Dummy2 = (navigation) => {
     return (
         <View style={Styles.mainContainer}>
-            <Text
+            <View
                 style={{
-                    fontSize: 16,
-                    color: 'black',
+                    height: (height / 100) * 10,
+                    width: width,
+                    backgroundColor: 'red',
+                    // alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-            >Dummy2</Text>
+            >
+                <TouchableOpacity
+               onPress={() => navigation.openDrawer()}
+                    style={{
+                        height: (height / 100) * 10,
+                        width: (width / 100) * 15,
+                        backgroundColor: 'blue',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Icons name="ios-home" color={'black'} size={25} />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
